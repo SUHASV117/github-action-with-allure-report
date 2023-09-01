@@ -1,12 +1,10 @@
 name: Allure Report Generation
 
 on:
-  workflow_dispatch: # Trigger the workflow manually
-    inputs:
-      tags: # Input parameter for test scenario tags
-        description: "Test scenario tags"
-        required: true
-        default: "smoke"
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   generate-allure-report:
